@@ -19,20 +19,20 @@ HISTFILESIZE=2000
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# Bash checks the window size after each command and, if necessary, 
+# Bash checks the window size after each command and, if necessary,
 # updates the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Minor errors in the spelling of a directory component in a cd command will be corrected. 
-# The errors checked for are transposed characters, a missing character, and a character too many. 
+# Minor errors in the spelling of a directory component in a cd command will be corrected.
+# The errors checked for are transposed characters, a missing character, and a character too many.
 # If a correction is found, the corrected path is printed, and the command proceeds.
 shopt -s cdspell
 
-# A command name that is the name of a directory is executed as if it were the 
+# A command name that is the name of a directory is executed as if it were the
 # argument to the cd command. This option is only used by interactive shells.
 shopt -s autocd
 
-# Bash attempts spelling correction on directory names during word completion 
+# Bash attempts spelling correction on directory names during word completion
 # if the directory name initially supplied does not exist.
 shopt -s dirspell
 
