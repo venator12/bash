@@ -2,13 +2,13 @@
 alias ls='ls -lFah --color=yes'
 alias l='ls -lFah --color=yes'
 
-#color alias
+# color alias
 alias dir='dir --color=yes'
 alias vdir='vdir --color=yes'
 alias grep='grep --color=yes'
 alias fgrep='fgrep --color=yes'
 alias egrep='egrep --color=yes'
-	
+
 # cd alias
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -46,9 +46,9 @@ alias cpuinfo='lscpu'
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
-# create .tar.gz 
+# create .tar.gz
 targz () { tar -zcvf $1.tar.gz $1; }
-# extra .tar.gz
+# extract .tar.gz
 untargz() { tar -zxvf $1; }
 
 ssd () {
@@ -57,7 +57,7 @@ ssd () {
   df -h | grep "/mnt/"
 }
 
-# some usefull functions
+# extract automatic this filetypes
 extract () {
   if [ -f $1 ] ; then
       case $1 in
@@ -79,11 +79,11 @@ extract () {
   fi
 }
 
-# Runs a ls immediately when you're inside a file. 
+# Runs a ls immediately when you're inside a file.
 cl () {
  if [ -d $1 ] ; then
 	cd $1
-	ls 
+	ls
  else
 	echo "cl: '$1' No such directory"
  fi

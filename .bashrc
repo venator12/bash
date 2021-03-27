@@ -36,7 +36,7 @@ shopt -s autocd
 # if the directory name initially supplied does not exist.
 shopt -s dirspell
 
-# If Readline is being used, Bash will attempt to perform hostname completion 
+# If Readline is being used, Bash will attempt to perform hostname completion
 # when a word containing a ‘@’ is being completed (see Commands For Completion).
 shopt -s hostcomplete
 
