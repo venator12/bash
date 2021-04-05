@@ -16,22 +16,22 @@ For example:
 
 ## ls alias
 List all directories and files.
-``bash
+```bash
 ls = 'ls -lFah --color = yes'
 l  = 'ls -lFah --color = yes'
-``
+```
 ## color alias
 All these commands are colorized.
-``bash
+```bash
 dir = 'dir --color = yes'
 vdir = 'vdir --color = yes'
 grep = 'grep --color = yes'
 fgrep = 'fgrep --color = yes'
 egrep = 'egrep --color = yes'
-``
+```
 ## cd alias
 Fast change directory command, use only dots.
-``bash
+```bash
 cd.. = 'cd ..'
 .. = 'cd ..'
 ... = 'cd ../..'
@@ -41,67 +41,68 @@ cd.. = 'cd ..'
 ....... = 'cd ../../../../../..'
 ........ = 'cd ../../../../../../..'
 ......... = 'cd ../../../../../../../..'
-``
+```
 ## clear
 c to clear the terminal.
-``bash
+```bash
 c = 'clear'
-``
+```
 ## mounted drives
 Show all mounted drives.
-``bash
+```bash
 mnt = "mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
-``
+```
 ## count files
 Count all files in the current directory.
-``bash
+```bash
 count = 'find . -type f | wc -l'
-``
+```
 ## find fast a file in the system
 Find a file in the whole system with the 'f' command.
-``bash
+```bash
 f = 'find / -type f -name'
 f <filename>
-``
+```
 ## grep history
 Grep a command in history.
-``bash
+```bash
 gh = 'history|grep'
 gh nano
-``
+```
 
 ## show path
 Show the PATH variable.
-``bash
+```bash
 path = 'echo -e ${PATH//:/\\n}'
-``
+```
 ## Info
 Show info about the system.
-``bash
+```bash
 meminfo = 'free -m -l -t'
 cpuinfo = 'lscpu'
-``
+```
 ## Up/Down history navigation.
 It will only jump to those commands in the history which start with the same fragment of a command.
 
 ## Archives
 ### Create a tar.gz archive
-``bash
+```bash
 targz (./dir)
+```
 ### Extract .tar.gz archive
-``bash
+```bash
 untargz(./test.tar.gz)
-``
+```
 ## Show disk space
-``bash
+```bash
 ssd
-``
+```
 ## extract different filetypes
-``bash
+```bash
 extract (./testfile.tar.gz)
-``
+```
 ## Change directory and show files
 Runs a ls immediately when you're inside a file.
-``bash
+```bash
 cl ()
-``
+```
