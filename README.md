@@ -1,7 +1,12 @@
-# Helpfull Bash Commands
+---
+title: Useful Bash Commands
+author: Stephan Willenig, BSc
+date: 06.08.2021
+---
+# Useful Bash Commands
 
 # Install
-Place both scripts in the user and/or root directory.
+Place both scripts in the `user` and/or `root` directory.
 For example:
 
 ```bash
