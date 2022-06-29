@@ -1,5 +1,14 @@
 # Useful Bash Commands
 
+# Download
+## root
+wget --no-check-certificate https://raw.githubusercontent.com/venator12/bash/main/.bashrc -O /root/.bashrc
+wget --no-check-certificate https://raw.githubusercontent.com/venator12/bash/main/.bash_aliases -O /root/.bash_aliases
+
+# User
+wget --no-check-certificate https://raw.githubusercontent.com/venator12/bash/main/.bashrc -O /home/$USER/.bashrc
+wget --no-check-certificate https://raw.githubusercontent.com/venator12/bash/main/.bash_aliases -O /home/$USER/.bash_aliases
+
 # Install
 Place both scripts in the `user` and/or `root` directory.
 For example:
@@ -8,8 +17,8 @@ For example:
 /root/.bashrc
 /root/.bash_aliases
 
-/home/<username>/.bashrc
-/home/<username>/.bash_aliases
+/home/$USER/.bashrc
+/home/$USER/.bash_aliases
 ```
 
 # Bash Commands
@@ -91,7 +100,7 @@ targz (./dir)
 ```
 ### Extract .tar.gz archive
 ```bash
-untargz(./test.tar.gz)
+untargz (./test.tar.gz)
 ```
 ## Show disk space
 ```bash
