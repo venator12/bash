@@ -2,18 +2,21 @@
 
 # Download
 ## root
+```bash
 wget --no-check-certificate https://raw.githubusercontent.com/venator12/bash/main/.bashrc -O /root/.bashrc
 wget --no-check-certificate https://raw.githubusercontent.com/venator12/bash/main/.bash_aliases -O /root/.bash_aliases
-
+```
 # User
+```bash
 wget --no-check-certificate https://raw.githubusercontent.com/venator12/bash/main/.bashrc -O /home/$USER/.bashrc
 wget --no-check-certificate https://raw.githubusercontent.com/venator12/bash/main/.bash_aliases -O /home/$USER/.bash_aliases
+```
 
 # Install
 Place both scripts in the `user` and/or `root` directory.
 For example:
 
-```
+```bash
 /root/.bashrc
 /root/.bash_aliases
 
