@@ -29,8 +29,8 @@ alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | eg
 # count files in this directory
 alias count='find . -type f | wc -l'
 
-# find fast a file in the system
-alias f='find / -type f -name'
+# find fast a file in the system at the current location
+alias f='find . -type f -name'
 
 # grep history
 alias gh='history|grep'
@@ -41,6 +41,13 @@ alias path='echo -e ${PATH//:/\\n}'
 # Info
 alias meminfo='free -m -l -t'
 alias cpuinfo='lscpu'
+alias osinfo='cat /etc/os-release'
+
+ssdinfo () {
+  echo "Device         Total  Used  Free  Pct MntPoint"
+  df -h | grep "/dev/sd"
+  df -h | grep "/mnt/"
+}
 
 # it will only jump to those commands in the history which start with the same fragment of a command.
 bind '"\e[A":history-search-backward'
@@ -51,21 +58,17 @@ targz () { tar -zcvf $1.tar.gz $1; }
 # extract .tar.gz
 untargz() { tar -zxvf $1; }
 
-ssd () {
-  echo "Device         Total  Used  Free  Pct MntPoint"
-  df -h | grep "/dev/sd"
-  df -h | grep "/mnt/"
-}
-
 # extract automatic this filetypes
 extract () {
   if [ -f $1 ] ; then
       case $1 in
           *.tar.bz2)   tar xvjf $1    ;;
           *.tar.gz)    tar xvzf $1    ;;
+	  *.tar.xz)    tar xvJf $1    ;;
           *.bz2)       bunzip2 $1     ;;
           *.rar)       rar x $1       ;;
           *.gz)        gunzip $1      ;;
+	  *.xz)        tar xvJf $1    ;;
           *.tar)       tar xvf $1     ;;
           *.tbz2)      tar xvjf $1    ;;
           *.tgz)       tar xvzf $1    ;;
@@ -75,11 +78,11 @@ extract () {
           *)           echo "don't know how to extract '$1'..." ;;
       esac
   else
-      echo "'$1' is not a valid file!"
+      echo "'$1' can not be extracted!"
   fi
 }
 
-# Runs a ls immediately when you're inside a file.
+# Run ls immediately when you are inside a file
 cl () {
  if [ -d $1 ] ; then
 	cd $1
